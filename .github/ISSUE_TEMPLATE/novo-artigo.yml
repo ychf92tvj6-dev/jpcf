@@ -1,0 +1,53 @@
+name: "Novo artigo (publicação automática)"
+description: "Preencha e envie. O blog publica sozinho."
+title: "[Artigo] "
+labels: ["novo-artigo"]
+
+body:
+  - type: input
+    id: titulo
+    attributes:
+      label: "Título"
+      placeholder: "Ex: Tendências do mercado em 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: autor
+    attributes:
+      label: "Autor"
+      placeholder: "Nome do autor"
+    validations:
+      required: true
+
+  - type: input
+    id: data
+    attributes:
+      label: "Data (AAAA-MM-DD)"
+      placeholder: "2025-12-28"
+    validations:
+      required: true
+
+  - type: input
+    id: categoria
+    attributes:
+      label: "Categoria"
+      placeholder: "Artigos / Institucional / Notícias..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: resumo
+    attributes:
+      label: "Resumo (1–2 frases)"
+      placeholder: "Pequena descrição do artigo."
+    validations:
+      required: true
+
+  - type: textarea
+    id: texto
+    attributes:
+      label: "Texto do artigo"
+      description: "Separe parágrafos com uma linha em branco."
+    validations:
+      required: true
