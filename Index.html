@@ -1,0 +1,263 @@
+Blog JPCF
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JPCF | Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#173a59; --navy-2:#0f2a42; --gray:#6f7580; --gray-2:#a8aeb8;
+      --bg:#f7f8fb; --card:#fff; --line:#e6e8ee; --radius:16px; --shadow:0 10px 30px rgba(15,42,66,.08);
+      --max:1024px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(23,58,89,.10), transparent 60%),
+                  radial-gradient(900px 400px at 90% 10%, rgba(111,117,128,.10), transparent 60%),
+                  var(--bg);
+      color:#101828;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.55;
+    }
+    a{ color:var(--navy); text-decoration:none; } a:hover{ text-decoration:underline; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 60px; }
+    header{
+      background: rgba(255,255,255,.75); backdrop-filter: blur(10px);
+      border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding:18px; display:flex; align-items:center; gap:16px; position:sticky; top:14px; z-index:20;
+    }
+    .brand{ display:flex; align-items:center; gap:14px; min-width:260px; }
+    .mark{ font-family:"Source Serif 4", serif; font-weight:700; letter-spacing:.5px; font-size:44px; line-height:1; color:var(--navy); }
+    .divider{ width:2px; height:48px; background: linear-gradient(to bottom, transparent, var(--gray-2), transparent); border-radius:999px; }
+    .brand-text{ font-family:"Source Serif 4", serif; font-size:24px; line-height:1.05; color:var(--gray); }
+    nav{ margin-left:auto; display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip{ border:1px solid var(--line); background:#fff; border-radius:999px; padding:8px 12px; font-weight:800; font-size:13px; }
+    .chip.active{ border-color: rgba(23,58,89,.35); background: rgba(23,58,89,.06); text-decoration:none; }
+
+    main{ margin-top:18px; display:grid; grid-template-columns: 1.6fr .9fr; gap:18px; align-items:start; }
+    @media (max-width: 880px){ header{ position:relative; top:auto; } .brand{ min-width: unset; } main{ grid-template-columns: 1fr; } }
+
+    .card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+    .pad{ padding:18px; }
+    .hero{ padding:18px 18px 10px; border-bottom:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(23,58,89,.10), rgba(111,117,128,.08));
+    }
+    .hero h1{ margin:0 0 6px; font-family:"Source Serif 4", serif; font-size:32px; color:var(--navy-2); }
+    .hero p{ margin:0; color:var(--gray); font-size:14px; }
+
+    .post{ padding:16px 18px; border-top:1px solid var(--line); }
+    .post:first-child{ border-top:none; }
+    .post h2{ margin:0 0 6px; font-size:18px; line-height:1.2; font-weight:900; color:#0b1f33; }
+    .meta{ display:flex; flex-wrap:wrap; gap:10px; color:var(--gray); font-size:12.5px; margin-bottom:10px; }
+    .badge{ font-size:12px; padding:3px 10px; border-radius:999px; border:1px solid var(--line); background:#fff; }
+
+    article h1{ margin:0 0 8px; font-family:"Source Serif 4", serif; font-size:34px; line-height:1.12; color:var(--navy-2); }
+    .content{ font-family:"Source Serif 4", serif; font-size:18px; color:#12212f; }
+    .content p{ margin:0 0 14px; }
+    .content blockquote{ margin:18px 0; padding:12px 14px; border-left:4px solid rgba(23,58,89,.35); background: rgba(23,58,89,.06); border-radius:10px; color:#0b1f33; }
+
+    .side-title{ font-weight:900; color:var(--navy-2); font-size:13px; letter-spacing:.6px; text-transform:uppercase; margin:0 0 10px; }
+    input[type="search"]{ width:100%; padding:12px; border-radius:12px; border:1px solid var(--line); outline:none; font-size:14px; }
+    input[type="search"]:focus{ border-color: rgba(23,58,89,.35); box-shadow: 0 0 0 4px rgba(23,58,89,.10); }
+    .btn{ border:1px solid rgba(23,58,89,.35); background: var(--navy); color:#fff; padding:11px 12px; border-radius:12px; font-weight:900; cursor:pointer; white-space:nowrap; }
+    .btn:hover{ filter: brightness(.96); }
+    .muted{ color:var(--gray); font-size:13px; }
+    footer{ margin-top:18px; padding:14px 18px; color:var(--gray); font-size:12.5px; text-align:center; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" title="JPCF | José Paulo Cavalcanti">
+        <div class="mark">JPCF</div>
+        <div class="divider"></div>
+        <div class="brand-text">José Paulo<br><strong>Cavalcanti</strong></div>
+      </div>
+
+      <nav>
+        <a class="chip" href="#/" id="nav-home">Artigos</a>
+        <a class="chip" href="#/sobre" id="nav-sobre">Sobre</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="hero" id="hero">
+          <h1>Artigos</h1>
+          <p>Publicações com layout limpo e elegante, nas cores da marca.</p>
+        </div>
+        <div id="view"></div>
+      </section>
+
+      <aside class="card">
+        <div class="pad">
+          <div class="side-title">Buscar</div>
+          <div style="display:grid; grid-template-columns: 1fr auto; gap:10px;">
+            <input id="q" type="search" placeholder="Digite um termo..." />
+            <button class="btn" id="btnSearch">Buscar</button>
+          </div>
+
+          <div style="height:14px"></div>
+          <div class="side-title">Categorias</div>
+          <div id="cats" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+
+          <div style="height:14px"></div>
+          <div class="side-title">Publicar artigo (externo)</div>
+          <p class="muted" style="margin:0;">
+            A pessoa externa cria um “formulário” em <strong>Issues</strong> e o GitHub publica sozinho.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="card">
+      <div class="pad">© <span id="year"></span> JPCF — Blog</div>
+    </footer>
+  </div>
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+
+    const fmtDate = (iso) => {
+      try{
+        const d = new Date(iso + "T00:00:00");
+        return d.toLocaleDateString("pt-BR",{day:"2-digit",month:"long",year:"numeric"});
+      }catch{ return iso; }
+    };
+
+    const unique = (arr) => [...new Set(arr)];
+
+    async function loadIndex(){
+      const res = await fetch("posts/index.json?cache=" + Date.now());
+      if(!res.ok) throw new Error("Não consegui ler posts/index.json");
+      return await res.json();
+    }
+
+    async function loadPost(slug){
+      const res = await fetch(`posts/${slug}.json?cache=` + Date.now());
+      if(!res.ok) throw new Error("Não consegui ler o post " + slug);
+      return await res.json();
+    }
+
+    function setActiveNav(hash){
+      $("#nav-home").classList.toggle("active", hash === "#/" || hash.startsWith("#/post") || hash === "#" || !hash);
+      $("#nav-sobre").classList.toggle("active", hash.startsWith("#/sobre"));
+    }
+
+    function renderCats(posts){
+      const cats = unique(posts.map(p => p.category).filter(Boolean)).sort();
+      $("#cats").innerHTML = cats.map(c => `<a class="badge" href="#/?cat=${encodeURIComponent(c)}">${c}</a>`).join("")
+        + `<a class="badge" href="#/">Todos</a>`;
+    }
+
+    function renderHome(posts, {q="", cat=""} = {}){
+      $("#hero h1").textContent = "Artigos";
+      $("#hero p").textContent = "Publicações com layout limpo e elegante, nas cores da marca.";
+
+      const query = q.trim().toLowerCase();
+      const filtered = posts
+        .slice()
+        .sort((a,b) => (b.date||"").localeCompare(a.date||""))
+        .filter(p => !cat || p.category === cat)
+        .filter(p => !query || (p.title + " " + (p.excerpt||"")).toLowerCase().includes(query));
+
+      $("#view").innerHTML = filtered.map(p => `
+        <div class="post">
+          <h2><a href="#/post/${p.slug}">${p.title}</a></h2>
+          <div class="meta">
+            <span>${fmtDate(p.date)}</span>
+            <span class="badge">${p.category || "Artigos"}</span>
+            ${p.author ? `<span class="badge">por ${p.author}</span>` : ``}
+          </div>
+          <div class="muted">${p.excerpt || ""}</div>
+        </div>
+      `).join("") || `<div class="pad"><p class="muted" style="margin:0;">Nenhum artigo encontrado.</p></div>`;
+    }
+
+    async function renderPost(slug){
+      $("#hero h1").textContent = "Leitura";
+      $("#hero p").textContent = "Clique em “Artigos” para voltar.";
+      const p = await loadPost(slug);
+
+      $("#view").innerHTML = `
+        <article class="pad">
+          <h1>${p.title}</h1>
+          <div class="meta">
+            <span>${fmtDate(p.date)}</span>
+            <span class="badge">${p.category || "Artigos"}</span>
+            ${p.author ? `<span class="badge">por ${p.author}</span>` : ``}
+          </div>
+          <div class="content">${p.html || ""}</div>
+          <div style="height:14px"></div>
+          <a class="chip" href="#/">← Voltar para artigos</a>
+        </article>
+      `;
+    }
+
+    function renderSobre(){
+      $("#hero h1").textContent = "Sobre";
+      $("#hero p").textContent = "Uma página institucional simples.";
+      $("#view").innerHTML = `
+        <article class="pad">
+          <h1>Sobre</h1>
+          <div class="content">
+            <p>Escreva aqui sua apresentação e contatos.</p>
+            <p><strong>Contato:</strong> seuemail@dominio.com • (xx) xxxx-xxxx</p>
+          </div>
+        </article>
+      `;
+    }
+
+    async function router(){
+      const hash = location.hash || "#/";
+      setActiveNav(hash);
+
+      const [path, qs] = hash.split("?");
+      const params = new URLSearchParams(qs || "");
+
+      const posts = await loadIndex();
+      renderCats(posts);
+
+      if(path === "#/" || path === "#"){
+        const q = params.get("q") || "";
+        const cat = params.get("cat") || "";
+        $("#q").value = q;
+        renderHome(posts, {q, cat});
+        return;
+      }
+      if(path.startsWith("#/post/")){
+        await renderPost(path.replace("#/post/",""));
+        return;
+      }
+      if(path === "#/sobre"){
+        renderSobre();
+        return;
+      }
+      renderHome(posts);
+    }
+
+    function doSearch(){
+      const q = $("#q").value.trim();
+      location.hash = q ? `#/?q=${encodeURIComponent(q)}` : "#/";
+    }
+
+    $("#btnSearch").addEventListener("click", doSearch);
+    $("#q").addEventListener("keydown", (e) => { if(e.key === "Enter") doSearch(); });
+
+    $("#year").textContent = new Date().getFullYear();
+    window.addEventListener("hashchange", () => router().catch(console.error));
+    router().catch(err => {
+      $("#view").innerHTML = `<div class="pad"><p class="muted">Erro: ${err.message}</p></div>`;
+    });
+  </script>
+</body>
+</html>
