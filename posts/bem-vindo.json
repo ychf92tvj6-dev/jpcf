@@ -1,0 +1,9 @@
+{
+  "slug": "bem-vindo",
+  "title": "Bem-vindo ao blog",
+  "date": "2025-12-28",
+  "category": "Institucional",
+  "author": "Equipe",
+  "excerpt": "Blog simples com publicação automática via Issues.",
+  "html": "<p>Este blog lê os posts a partir da pasta <strong>posts</strong>.</p><blockquote>Os artigos serão criados automaticamente quando alguém preencher um formulário (Issue) no GitHub.</blockquote>"
+}
