@@ -113,14 +113,14 @@ Blog JPCF
           <div style="height:14px"></div>
           <div class="side-title">Sobre o blog</div>
 <p class="muted">
-  Artigos e reflexões de José Paulo Cavalcanti.
+  Artigos de José Paulo Cavalcanti.
 </p>
         </div>
       </aside>
     </main>
 
     <footer class="card">
-      <div class="pad">© <span id="year"></span> JPCF — Blog</div>
+      <div class="pad">© <span id="year"></span> JPCF</div>
     </footer>
   </div>
 
@@ -161,8 +161,7 @@ Blog JPCF
 
     function renderHome(posts, {q="", cat=""} = {}){
       $("#hero h1").textContent = "Artigos";
-      $("#hero p").textContent = "Publicações com layout limpo e elegante, nas cores da marca.";
-
+$("#hero p").textContent = "";
       const query = q.trim().toLowerCase();
       const filtered = posts
         .slice()
