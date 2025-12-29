@@ -8,6 +8,14 @@
     "excerpt": "Blog simples com publicação automática via Issues."
   },
   {
+    "slug": "teste-1-4",
+    "title": "Teste 1",
+    "date": "(AAAA-MM-DD)\n\n2025-12-29",
+    "category": "Artigos",
+    "author": "Teste 2",
+    "excerpt": "(1–2 frases)\n\nteste 3"
+  },
+  {
     "slug": "artigo-de-teste-automatico-2",
     "title": "Artigo de teste automático",
     "date": "(AAAA-MM-DD)\n\n2025-12-28",
