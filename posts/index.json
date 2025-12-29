@@ -7,31 +7,7 @@
     "author": "Equipe",
     "excerpt": "Blog simples com publicação automática via Issues."
   },
-  {
-    "slug": "eg-1-7",
-    "title": "EG 1",
-    "date": "2025-12-24",
-    "category": "Artigos",
-    "author": "EG 2",
-    "excerpt": "descrição 1"
-  },
-  {
-    "slug": "teste-1-4",
-    "title": "Teste 1",
-    "date": "(AAAA-MM-DD)\n\n2025-12-29",
-    "category": "Artigos",
-    "author": "Teste 2",
-    "excerpt": "(1–2 frases)\n\nteste 3"
-  },
-  {
-    "slug": "artigo-de-teste-automatico-2",
-    "title": "Artigo de teste automático",
-    "date": "(AAAA-MM-DD)\n\n2025-12-28",
-    "category": "Artigos",
-    "author": "Ernesto",
-    "excerpt": "(1–2 frases)\n\nEste artigo foi publicado automaticamente via formulário."
-  },
-  {
+   {
     "slug": "coluna-da-semana-conversas-de-minuto-49-artistas-3",
     "title": "COLUNA DA SEMANA - CONVERSAS DE ½ MINUTO (49) ‒ ARTISTAS",
     "date": "(AAAA-MM-DD)\n\n2025-12-24",
