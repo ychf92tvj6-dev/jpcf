@@ -16,6 +16,14 @@
     "excerpt": "Blog simples com publicação automática via Issues."
   },
   {
+    "slug": "eg-1-7",
+    "title": "EG 1",
+    "date": "2025-12-24",
+    "category": "Artigos",
+    "author": "EG 2",
+    "excerpt": "descrição 1"
+  },
+  {
     "slug": "teste-1-4",
     "title": "Teste 1",
     "date": "(AAAA-MM-DD)\n\n2025-12-29",
